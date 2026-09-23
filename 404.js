@@ -26,7 +26,10 @@
       ctx.fill();
       if (!reduceMotion) {
         p.y += p.speed; p.x += p.drift;
-        if (p.y > H + 10) { p.y = -10; p.x = Math.random() * W; }
+        if (p.y > H + 10) {
+          p.y = -10;
+          p.x = Math.random() * W;
+        }
         if (p.x > W + 10) p.x = -10;
         if (p.x < -10) p.x = W + 10;
       }
@@ -41,6 +44,8 @@
       cursorGlow.style.transform = `translate(${e.clientX - HALF}px,${e.clientY - HALF}px)`;
       cursorGlow.style.opacity = '1';
     });
-    document.addEventListener('mouseleave', () => { cursorGlow.style.opacity = '0'; });
+    document.addEventListener('mouseleave', () => {
+      cursorGlow.style.opacity = '0';
+    });
   }
 })();
